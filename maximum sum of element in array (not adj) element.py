@@ -1,8 +1,8 @@
 a = list(map(int, input().split()))
 inc = 0
-ex = 0
-for i in a:
-  nex = max(inc,ex)
-  inc = ex + i
-  ex = nex
-print(max(inc,ex))  
+exc = 0
+for i in range(len(a)):
+    t = max(inc,exc)
+    inc = exc+a[i]
+    exc = t
+print(max(inc,exc))
