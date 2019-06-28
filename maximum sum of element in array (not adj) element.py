@@ -1,8 +1,9 @@
-a = list(map(int, input().split()))
+n = int(input())
+arr = list(map(int, input().split()))
 inc = 0
 exc = 0
-for i in range(len(a)):
-    t = max(inc,exc)
-    inc = exc+a[i]
-    exc = t
+for i in arr:
+    temp = inc
+    inc = max(inc, exc+i)
+    exc = temp
 print(max(inc,exc))
