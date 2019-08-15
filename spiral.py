@@ -8,29 +8,31 @@ down = 1
 top = 0
 left = 0
 right = 0
-print(*arr[0],sep="",end="")
+result = []
+result += arr[0]
 del arr[0]
 
 while(len(arr)>=1):
     if down == 1:
         for i in range(len(arr)):
-            print(arr[i][-1],end="")
+            result.append(arr[i][-1])
             del arr[i][-1]
         down = 0
         left = 1
     if left == 1:
-        print(*arr[len(arr)-1][::-1],sep="",end="")
+        result += arr[len(arr)-1][::-1]
         del arr[len(arr)-1]
         left = 0
         top = 1
     if top == 1:
         for i in range(len(arr)-1,0,-1):
-            print(arr[i][0],end="")
+            result.append(arr[i][0])
             del arr[i][0]
         top = 0
         right = 1
     if right == 1 and len(arr)>0:
-        print(*arr[0],sep="",end="")
+        result + = arr[0]
         del arr[0]
         right = 0
         down = 1
+print(*result)
